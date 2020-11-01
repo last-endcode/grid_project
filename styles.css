@@ -184,6 +184,15 @@ CARDS
   margin-bottom: 3rem;
 }
 
+/* if u have problem streching on each card
+on row height solution
+*/
+.card {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
 .card-info {
   padding: 1.2rem;
 }
@@ -202,11 +211,6 @@ CARDS
   color: var(--mainBlack);
   font-weight: bold;
   padding: 0.25rem 0;
-}
-
-.card-pic {
-  height: 16rem;
-  object-fit: cover;
 }
 
 /* here grid still 1 column */
