@@ -3,6 +3,8 @@
 Variable
 ============
 */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300&display=swap');
+
 :root {
   --primaryColor: red;
   --mainBlack: #333;
@@ -30,7 +32,7 @@ Global Styles
   letter-spacing: var(--mainSpacing);
   padding: 0.45rem 0.85rem;
   transition: var(--mainTransition);
-  margin: 2rem 3rem;
+  margin: 2rem 1rem;
 }
 
 .btn:hover {
@@ -156,4 +158,82 @@ text p near and not has space */
   .hero-banner {
     margin: 0 3rem;
   }
+
+  .btn {
+    margin: 2rem 3rem;
+  }
 }
+
+/* 
+============
+CARDS
+============
+*/
+.title {
+  text-align: center;
+}
+
+.card-center {
+  width: 80vw;
+  max-width: 1170px;
+  margin: 2rem auto;
+}
+
+.card {
+  border: 2px solid var(--mainGrey);
+  margin-bottom: 3rem;
+}
+
+.card-info {
+  padding: 1.2rem;
+}
+
+.card-footer {
+  background: var(--mainGrey);
+  padding: 0.25rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* here cz horizontal use justify-items */
+  justify-items: center;
+}
+
+/* change color icons */
+.card-footer span {
+  color: var(--mainBlack);
+  font-weight: bold;
+  padding: 0.25rem 0;
+}
+
+.card-pic {
+  height: 16rem;
+  object-fit: cover;
+}
+
+/* here grid still 1 column */
+/* add grid 2 coloum if 768px */
+/* add grid 3 coloum if 992px */
+/* @media screen and (min-width: 768px) {
+  .card-center {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 2rem;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .card-center {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} */
+
+/* and u can use this one */
+/* max-width card-center (1170 - 64) / 3 column
+64 is gap on 3 column
+4 column 1170 - 96 / 4 = 268.5
+*/
+.card-center {
+  display: grid;
+  grid-column-gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(268.5px, 1fr));
+}
+/* depending on prefer your style for media query */
