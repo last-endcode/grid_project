@@ -30,7 +30,7 @@ Global Styles
   letter-spacing: var(--mainSpacing);
   padding: 0.45rem 0.85rem;
   transition: var(--mainTransition);
-  margin: 2rem 1rem;
+  margin: 2rem 3rem;
 }
 
 .btn:hover {
@@ -154,6 +154,6 @@ text p near and not has space */
   }
 
   .hero-banner {
-    padding: 0 6rem;
+    margin: 0 3rem;
   }
 }
