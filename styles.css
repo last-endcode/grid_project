@@ -4,18 +4,17 @@ Variable
 ============
 */
 :root {
-  --primaryColor: coral;
+  --primaryColor: red;
   --mainBlack: #333;
   --mainWhite: #fff;
-  --offWhite: #ccc;
-  --darkGrey: #afafaf;
-  --mainTransition: all 0.3 linear;
+  --mainGrey: #ddd;
   --mainSpacing: 0.2rem;
+  --mainTransition: all 0.3s linear;
 }
 
 /* 
 ============
-GLOBAL Style
+Global Styles
 ============
 */
 * {
@@ -24,16 +23,36 @@ GLOBAL Style
   padding: 0;
 }
 
-body {
-  font-family: 'Fira Code', monospace;
+.btn {
+  background: var(--primaryColor);
   color: var(--mainWhite);
-  background: var(--mainBlack);
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  padding: 0.45rem 0.85rem;
+  transition: var(--mainTransition);
+  margin: 2rem 1rem;
+}
+
+.btn:hover {
+  color: var(--mainBlack);
+}
+body {
+  font-family: 'Fira Code', sans-serif;
+  font-size: 1.2rem;
+  /* add line-height cz line-height none
+  and 1.5 is 24px */
   line-height: 1.5;
+  background: var(--mainBlack);
+  color: var(--mainWhite);
 }
 
 a {
-  display: block;
+  display: inline-block;
   text-decoration: none;
+}
+
+li {
+  list-style-type: none;
 }
 
 img {
@@ -41,37 +60,23 @@ img {
   width: 100%;
 }
 
-/* set Heading */
 h1,
 h2,
 h3 {
   text-transform: capitalize;
+  /* here margin-bottom not set, set be 1.25rem */
   margin-bottom: 1.25rem;
   letter-spacing: var(--mainSpacing);
 }
 
-/* set paragraph */
+/* change font-size */
+h1 {
+  font-size: 3rem;
+}
+
 p {
-  font-size: 0.7rem;
-  font-weight: 300;
-  line-height: 2;
-}
-
-/* button */
-.btn {
-  display: inline-block;
-  border: 3px solid var(--mainWhite);
-  color: var(--mainWhite);
-  text-transform: uppercase;
-  padding: 0.35rem 0.75rem;
-  margin: 1.5rem;
-  transition: var(--mainTransition);
-  margin-top: 50vh;
-}
-
-.btn:hover {
-  background: var(--primaryColor);
-  color: var(--mainWhite);
+  font-size: 0.75rem;
+  margin-bottom: 1.25rem;
 }
 
 /* 
@@ -79,44 +84,76 @@ p {
 Main Navbar
 ============
 */
-.main-navbar {
-  background: var(--darkGrey);
-  color: var(--mainWhite);
-  /* left and right 2rem */
-  padding: 0 2rem;
-}
 
-/* hilangkan list-style-type */
-.main-navbar li {
-  list-style-type: none;
+/* add background here on ul */
+.main-navbar {
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  padding: 1rem 0;
 }
 
 .main-navbar a {
-  display: block;
-  text-transform: capitalize;
-  /* top/bottom 1rem */
-  padding: 1rem 0;
   color: var(--mainBlack);
-  /* for smooth if clicked */
-  transition: var(--mainTransition);
+  text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
+  padding: 0.45rem 1rem;
+  transition: var(--mainTransition);
 }
 
+/* if clicked */
 .main-navbar a:hover {
   color: var(--mainWhite);
 }
 
-/* media query if 992px will be grid center */
+/* if 992px ul be changed be grid */
 @media screen and (min-width: 992px) {
-  /* change ul be grid for be center for li */
   .main-navbar ul {
-    /* max-width: 1170px; */
     max-width: 1170px;
     margin: 0 auto;
-    /* be grid here has 4 column*/
     display: grid;
+    /* here has 4 column */
     grid-template-columns: repeat(4, 1fr);
-    /* and be center */
     text-align: center;
+  }
+}
+
+/* 
+============
+HERO
+============
+*/
+.hero-header {
+  min-height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-banner p {
+  width: 85%;
+  max-width: 550px;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+/* give padding top-right 2rem cz
+text p near and not has space */
+@media screen and (max-width: 600px) {
+  .hero-banner {
+    padding: 0 1rem;
+  }
+}
+
+/* if 768px hero-header has background */
+@media screen and (min-width: 768px) {
+  .hero-header {
+    background: linear-gradient(rgba(16, 25, 53, 0.75), rgba(0, 0, 0, 0.75)),
+      url('./images/image-2.jpeg') no-repeat center/cover fixed;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .hero-banner {
+    padding: 0 6rem;
   }
 }
