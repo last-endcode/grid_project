@@ -26,7 +26,7 @@ Global Styles
 }
 
 .btn {
-  background: var(--primaryColor);
+  background: var(--mainBlack);
   color: var(--mainWhite);
   text-transform: uppercase;
   letter-spacing: var(--mainSpacing);
@@ -241,3 +241,108 @@ on row height solution
   grid-template-columns: repeat(auto-fill, minmax(268.5px, 1fr));
 }
 /* depending on prefer your style for media query */
+
+/* 
+==============
+Layout
+==============
+*/
+.header {
+  text-align: center;
+  background: var(--mainBlack);
+  color: var(--primaryColor);
+  padding: 0.15rem;
+}
+
+.h2 {
+  letter-spacing: var(--mainSpacing);
+}
+
+.navbar {
+  background: var(--primaryColor);
+  color: var(--mainGrey);
+}
+
+.navbar a {
+  padding: 0.25rem 2rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+  color: var(--mainWhite);
+}
+
+.content {
+  padding: 2rem;
+}
+
+.content p {
+  font-size: 1rem;
+}
+
+.sidebar {
+  background: var(--primaryColor);
+  padding: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  color: var(--mainWhite);
+  font-size: 1.2rem;
+}
+
+.footer {
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.footer p {
+  font-size: 1.2rem;
+  text-transform: capitalize;
+}
+
+/* create be 1 fr
+and rows 
+*/
+.main {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto auto 1fr auto auto;
+}
+
+@media screen and (min-width: 768px) {
+  .navbar ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-items: center;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .main {
+    grid-template-columns: 200px 1fr 50px;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+      'navbar content sidebar'
+      'navbar content sidebar'
+      'footer footer footer';
+  }
+
+  .navbar {
+    grid-area: navbar;
+  }
+  .navbar ul {
+    grid-template-columns: 1fr;
+    align-items: center;
+    /* agar lebar ke tengah */
+    min-height: 100%;
+  }
+
+  .sidebar {
+    grid-area: sidebar;
+    grid-template-columns: 1fr;
+    align-items: center;
+    min-height: 100%;
+  }
+  .footer {
+    grid-area: footer;
+  }
+}
