@@ -346,3 +346,43 @@ and rows
     grid-area: footer;
   }
 }
+
+/* or u can use this one 
+ */
+/* 992px */
+/* @media screen and (min-width: 992px) {
+  .main {
+    display: grid;
+    grid-template-columns: [start] 200px [col-1end] 1fr [col-2end] 50px [end];
+    grid-template-rows: [start] auto [row-1end] 1fr [row-2end] auto [end];
+  }
+  .header { */
+/* ---> */
+/* grid-column: start/end;
+    grid-row: start/row-1end;
+  }
+  .navbar {
+    grid-column: start/col-1end;
+    grid-row: row-1end/row-2end;
+  }
+  .navbar ul {
+    grid-template-columns: 1fr;
+    min-height: 100%;
+    align-items: center;
+  }
+  .content {
+    grid-column: col-1end/col-2end;
+    grid-row: row-1end/row-2end;
+  }
+  .sidebar {
+    grid-column: col-2end/end;
+    grid-row: row-1end/row-2end;
+    grid-template-columns: 1fr;
+    min-height: 100%;
+    align-items: center;
+  }
+  .footer {
+    grid-column: start/end;
+    grid-row: row-2end/end;
+  }
+} */
